@@ -18,18 +18,18 @@
 
     <div class="field" style="user-select: auto;">
       <label for="user_image" style="user-select: auto;">Image</label>
-      <input value="{}" data-reference="53e462b8fa1182bc5d3d3f1a2383593e" type="hidden" name="user[profile_image]" style="user-select: auto;"><input class="user_image" data-reference="53e462b8fa1182bc5d3d3f1a2383593e" include_hidden="false" type="file" name="user[profile_image]" id="user_profile_image" style="user-select: auto;">
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
     </div>
 
     <div class="field" style="user-select: auto;">
       <label for="user_introduction" style="user-select: auto;">Introduction</label>
-      <%= f.text_area :Introduction, class:"form-control", rows:"3", placeholder:"コメントここに" %>
+      <%= f.text_area :introduction, class:"form-control", rows:"3", placeholder:"コメントここに" %>
     </div>
 
     <div class="actions" style="user-select: auto;">
       <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
     </div>
 
-  </form>
+<% end %>
   </div>
 </div>
