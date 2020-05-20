@@ -1,3 +1,5 @@
+<!-- signin後のリンク設定 -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,6 +16,47 @@
 
 
   <body>
+<!-- logout -->
+    <header class="navbar navbar-fixed-top navbar-inverse" style="user-select: auto;">
+      <div class="container" style="user-select: auto;">
+        <nav class="nav navbar-nav navbar-left" style="user-select: auto;">
+          <span style="user-select: auto;">Bookers</span>
+        </nav>
+        <nav style="user-select: auto;">
+          <ul class="nav navbar-nav navbar-right" style="user-select: auto;">
+
+          <% if user_signed_in? %>
+            <li style="user-select: auto;"><%= link_to "Home", root_path, class: "glyphicon glyphicon-home home" %></li>
+            <li style="user-select: auto;"><%= link_to "Users", home_about_path, class: "glyphicon glyphicon-user users" %></li>
+            <li style="user-select: auto;"><%= link_to "Books", new_user_session_path, class: "glyphicon glyphicon-book books" %></li>
+            <li style="user-select: auto;"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out logout" %></li>
+
+          <% else %>
+             <li style="user-select: auto;"><%= link_to "Home", root_path, class: "glyphicon glyphicon-home home" %></li>
+             <li style="user-select: auto;"><%= link_to "about", home_about_path, class: "glyphicon glyphicon-link about" %></li>
+             <li style="user-select: auto;"><%= link_to "sign up", new_user_session_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+             <li style="user-select: auto;"><%= link_to "login", new_user_registration_path, class: "glyphicon glyphicon-log-in sign_in" %></li>
+          <% end %>
+
+
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
     <%= yield %>
+
+    <footer style="user-select: auto;">
+      <div class="container" style="user-select: auto;">
+        <div class="row" style="user-select: auto;">
+          <div class="col-xs-3 col-xs-offset-9" style="user-select: auto;">
+            <p style="user-select: auto;">CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
