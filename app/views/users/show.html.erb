@@ -39,9 +39,8 @@
           <a href="/users/17750" style="user-select: auto;">
           <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;"></a>　<!-- 変更 -->
         </td>
-        <td style="user-select: auto;"><%= book.title %></td>　<!-- 変更 -->
+        <td style="user-select: auto;"><%= link_to "#{book.title}", book_path(book.id) %></td>　<!-- 変更 -->
         <td style="user-select: auto;"><%= book.body %></td>　<!-- 変更 -->
-      </tr>
 
     <% end %>　<!-- 変更 -->
 

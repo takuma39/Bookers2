@@ -22,8 +22,10 @@
             <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;"><br style="user-select: auto;">
             qqq</a> <!-- 変更 -->
           </td>
-          <td style="user-select: auto;"><%= @book.title %></td> <!-- 変更 -->
-          <td style="user-select: auto;"><%= @book.body %></td> <!-- 変更 -->
+          <td style="user-select: auto;"><%= @books.title %></td> <!-- 変更 -->
+          <td style="user-select: auto;"><%= @books.body %></td> <!-- 変更 -->
+          <td style="user-select: auto;"><%= link_to "Edit", edit_book_path, class: "btn-sm btn-success" %></td>　<!-- 変更 -->
+          <td style="user-select: auto;"><%= link_to "Destroy", method: :delete, class: "btn-sm btn-danger" %></td>　<!-- 変更 -->
         </tr>
       </tbody>
     </table>
