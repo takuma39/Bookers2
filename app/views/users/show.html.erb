@@ -12,41 +12,40 @@
 
 <!-- 左側 -->
 
-  <div class="col-xs-3" style="user-select: auto;">
-    <h2 style="user-select: auto;">User info</h2>
-<!-- link -->    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-    <table class="table" style="user-select: auto;">
-      <tbody style="user-select: auto;"><tr style="user-select: auto;"></tr>
-      <tr style="user-select: auto;">
-    	  <th style="user-select: auto;">name</th>
-<!-- link -->    	  <th style="user-select: auto;"><%= @user.name %></th>
+<div class="col-xs-3">
+    <h2>User info</h2>
+    <img class="attachment user profile_image" src="/attachments/667402ba074e7cc778b0670a465603080894af61/store/fill/100/100/f592fc61b0df157bcce617076617cfdcfb462ca89cb34b001e2b8525ae88/profile_image" alt="Profile image"><table class="table">
+      <tbody><tr></tr> 
+      <tr>
+        <th>name</th>
+        <th>takuma</th>
       </tr>
-      <tr style="user-select: auto;">
-    	  <th style="user-select: auto;">introduction</th>
-<!-- link -->    	  <th style="user-select: auto;"><%= @user.introduction %></th>
+      <tr>
+        <th>introduction</th>
+        <th>test</th>
       </tr>
 </tbody></table>
 
-<div class="row" style="user-select: auto;">
-<!-- link -->  <%= link_to "", edit_user_path(current_user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_17751" %>
+<div class="row">
+  <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_17832" href="/users/17832/edit"></a>
 </div>
 
-    <h2 style="user-select: auto;">New book</h2>
-<!-- link -->    <%= form_for(@book) do |f| %>
-  <div class="field row" style="user-select: auto;">
-    <label for="book_title" style="user-select: auto;">Title</label>
-<!-- link -->    <%= f.text_field :title, class:"col-xs-12" %>
+    <h2>New book</h2>
+    <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="JHyLmFc/gdI+w5XSCx3KR8PT8F1WlgW5Innu1Ljh80ihimdh9xAzLLPnq73oFrTvQ1Aslr3FMiDfY/8eaN5jcg==">
+  <div class="field row">
+    <label for="book_title">Title</label>
+    <input class="col-xs-12 book_title" type="text" name="book[title]" id="book_title">
   </div>
 
-  <div class="field row" style="user-select: auto;">
-    <label for="book_opinion" style="user-select: auto;">Opinion</label>
-<!-- link -->    <%= f.text_area :body, class:"col-xs-12 book_body" %>
+  <div class="field row">
+    <label for="book_opinion">Opinion</label>
+    <textarea class="col-xs-12 book_body" name="book[body]" id="book_body"></textarea>
   </div>
 
-  <div class="actions row" style="user-select: auto;">
-<!-- link -->    <%= f.submit "Create Book", class:"btn btn-primary col-xs-12" %>
+  <div class="actions row">
+    <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
   </div>
-<!-- link --><% end %>
+</form>
 
   </div>
 
