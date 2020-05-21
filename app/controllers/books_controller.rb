@@ -1,4 +1,14 @@
 class BooksController < ApplicationController
+    def index
+        @books = Book.all
+        @book = Book.new
+    end
+
+    def show
+        @books = Book.find(params[:id])
+        @book = Book.new
+    end
+
 	def new
 		@book = Book.new
     end
@@ -7,21 +17,13 @@ class BooksController < ApplicationController
     	@book = Book.new(book_params)
     	@book.user_id = current_user.id
     	if @book.save
-    	   redirect_to books_path
+    	   redirect_to book_path(@book)
         else
             render :show
         end
     end
 
-    def index
 
-
-    end
-
-    def show
-    	@post_image = PostImage.find(params[:id])
-        @user = User.find(params[:id])
-    end
 
     private
     def book_params

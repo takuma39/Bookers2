@@ -7,11 +7,11 @@
     <tbody style="user-select: auto;"><tr style="user-select: auto;"></tr>
       <tr style="user-select: auto;">
         <th style="user-select: auto;">name</th>
-        <th style="user-select: auto;">qqq</th> <!-- 変更 -->
+        <th style="user-select: auto;"><%= current_user.name %></th> <!-- 変更 -->
       </tr>
       <tr style="user-select: auto;">
         <th style="user-select: auto;">introduction</th>
-        <th style="user-select: auto;"></th> <!-- 変更 -->
+        <th style="user-select: auto;">後で変更</th> <!-- 変更 -->
       </tr>
     </tbody>
 
@@ -35,7 +35,7 @@
     </div>
 
     <div class="actions row" style="user-select: auto;">
-      %= f.submit "Create Book", class:"btn btn-primary col-xs-12" %> <!-- 変更 -->
+      <%= f.submit "Create Book", class:"btn btn-primary col-xs-12" %> <!-- 変更 -->
     </div>
 
   　　<% end %> <!-- 変更 -->

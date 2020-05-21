@@ -15,41 +15,7 @@
 
 <div class="row" style="user-select: auto;">
   <!-- 左側 -->
-  <div class="col-xs-3" style="user-select: auto;">
-    <h2 style="user-select: auto;">User info</h2>
-    <img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" alt="No image" style="user-select: auto;"><table class="table" style="user-select: auto;">
-      <tbody style="user-select: auto;"><tr style="user-select: auto;"></tr>
-      <tr style="user-select: auto;">
-    	  <th style="user-select: auto;">name</th>
-    	  <th style="user-select: auto;">takuma</th>
-      </tr>
-      <tr style="user-select: auto;">
-    	  <th style="user-select: auto;">introduction</th>
-    	  <th style="user-select: auto;"></th>
-      </tr>
-</tbody></table>
-
-<div class="row" style="user-select: auto;">
-  <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_17751" href="/users/17751/edit" style="user-select: auto;"></a>
-</div>
-
-    <h2 style="user-select: auto;">New book</h2>
-    <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post" style="user-select: auto;"><input name="utf8" type="hidden" value="✓" style="user-select: auto;"><input type="hidden" name="authenticity_token" value="fFE/n+bfpN9GVu87z2sTbhnsmx1YDvDYbHOhheyf+ilq6PmqCkfeJvE1FnM3pXzhQLbqToevb9P8TN748qG46Q==" style="user-select: auto;">
-  <div class="field row" style="user-select: auto;">
-    <label for="book_title" style="user-select: auto;">Title</label>
-    <input class="col-xs-12 book_title" type="text" name="book[title]" id="book_title" style="user-select: auto;">
-  </div>
-
-  <div class="field row" style="user-select: auto;">
-    <label for="book_opinion" style="user-select: auto;">Opinion</label>
-    <textarea class="col-xs-12 book_body" name="book[body]" id="book_body" style="user-select: auto;"></textarea>
-  </div>
-
-  <div class="actions row" style="user-select: auto;">
-    <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book" style="user-select: auto;">
-  </div>
-</form>
-  </div>
+<%= render 'template/sidebar' %>
 
 
   <!-- 右側 -->
@@ -68,62 +34,19 @@
   </thead>
 
   <tbody style="user-select: auto;">
+    <% @books.each do |book| %>
+
       <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17750" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28462" href="/books/28462" style="user-select: auto;">sdfdsfs</a></td>
-        <td style="user-select: auto;">dfsagfadga</td>
+        <td style="user-select: auto;">
+          <a href="/users/17750" style="user-select: auto;">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;"></a>
+        </td>
+        <td style="user-select: auto;"><%= book.title %></td>
+        <td style="user-select: auto;"><%= book.body %></td>
       </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17748" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28455" href="/books/28455" style="user-select: auto;">test1</a></td>
-        <td style="user-select: auto;">本文1</td>
-      </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17748" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28456" href="/books/28456" style="user-select: auto;">test2</a></td>
-        <td style="user-select: auto;">本文2</td>
-      </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17748" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28457" href="/books/28457" style="user-select: auto;">test3</a></td>
-        <td style="user-select: auto;">本文3</td>
-      </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17749" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28458" href="/books/28458" style="user-select: auto;">test4</a></td>
-        <td style="user-select: auto;">本文4</td>
-      </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17749" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28459" href="/books/28459" style="user-select: auto;">test5</a></td>
-        <td style="user-select: auto;">本文5</td>
-      </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17749" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28460" href="/books/28460" style="user-select: auto;">test6</a></td>
-        <td style="user-select: auto;">本文6</td>
-      </tr>
-      <tr style="user-select: auto;">
-        <td style="user-select: auto;"><a href="/users/17749" style="user-select: auto;">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;">
-</a>        </td>
-        <td style="user-select: auto;"><a class="book_28461" href="/books/28461" style="user-select: auto;">test7</a></td>
-        <td style="user-select: auto;">本文7</td>
-      </tr>
+
+    <% end %>
+
   </tbody>
 </table>
   </div>

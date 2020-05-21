@@ -12,42 +12,7 @@
 
 <!-- 左側 -->
 
-<div class="col-xs-3">
-    <h2>User info</h2>
-    <img class="attachment user profile_image" src="/attachments/667402ba074e7cc778b0670a465603080894af61/store/fill/100/100/f592fc61b0df157bcce617076617cfdcfb462ca89cb34b001e2b8525ae88/profile_image" alt="Profile image"><table class="table">
-      <tbody><tr></tr> 
-      <tr>
-        <th>name</th>
-        <th>takuma</th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th>test</th>
-      </tr>
-</tbody></table>
-
-<div class="row">
-  <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_17832" href="/users/17832/edit"></a>
-</div>
-
-    <h2>New book</h2>
-    <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="JHyLmFc/gdI+w5XSCx3KR8PT8F1WlgW5Innu1Ljh80ihimdh9xAzLLPnq73oFrTvQ1Aslr3FMiDfY/8eaN5jcg==">
-  <div class="field row">
-    <label for="book_title">Title</label>
-    <input class="col-xs-12 book_title" type="text" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field row">
-    <label for="book_opinion">Opinion</label>
-    <textarea class="col-xs-12 book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions row">
-    <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
-  </div>
-</form>
-
-  </div>
+<%= render 'template/sidebar' %>
 
 
 <!-- 右側 -->
@@ -67,6 +32,19 @@
   </thead>
 
   <tbody style="user-select: auto;">
+    <% @books.each do |book| %> <!-- 変更 -->
+
+      <tr style="user-select: auto;">
+        <td style="user-select: auto;">
+          <a href="/users/17750" style="user-select: auto;">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;"></a>　<!-- 変更 -->
+        </td>
+        <td style="user-select: auto;"><%= book.title %></td>　<!-- 変更 -->
+        <td style="user-select: auto;"><%= book.body %></td>　<!-- 変更 -->
+      </tr>
+
+    <% end %>　<!-- 変更 -->
+
   </tbody>
 </table>
   </div>
