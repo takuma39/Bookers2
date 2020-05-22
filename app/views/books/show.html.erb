@@ -24,8 +24,10 @@
           </td>
           <td style="user-select: auto;"><%= @books.title %></td> <!-- 変更 -->
           <td style="user-select: auto;"><%= @books.body %></td> <!-- 変更 -->
+
           <td style="user-select: auto;"><%= link_to "Edit", edit_book_path, class: "btn-sm btn-success" %></td>　<!-- 変更 -->
           <td style="user-select: auto;"><%= link_to "Destroy", method: :delete, class: "btn-sm btn-danger" %></td>　<!-- 変更 -->
+
         </tr>
       </tbody>
     </table>
