@@ -1,15 +1,8 @@
 
-
-
-
-
-
-
-  	<div class="body" style="user-select: auto;">
-      <div class="container" style="user-select: auto;">
 <!-- サクセスメッセージ -->
 <%= render 'template/flash.message' %>
 
+<div class="row" style="user-select: auto;">
 <!-- エラーメッセージ -->
 <% if @book.errors.any? %>
     <div id="error_explanation">
@@ -61,15 +54,12 @@
   </tbody>
 </table>
   </div>
+
+
+
+
+
+
+
+
 </div>
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-
