@@ -1,6 +1,6 @@
 <div class="col-xs-3" style="user-select: auto;">
   <h2 style="user-select: auto;">User info</h2>
-  <!--%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size: '100x100' %--> <!-- 変更 -->
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %> <!-- 変更 -->
 
   <table class="table" style="user-select: auto;">
 
@@ -11,7 +11,7 @@
       </tr>
       <tr style="user-select: auto;">
         <th style="user-select: auto;">introduction</th>
-        <th style="user-select: auto;">後で変更</th> <!-- 変更 -->
+        <th style="user-select: auto;"><%= current_user.introduction %></th> <!-- 変更 -->
       </tr>
     </tbody>
 

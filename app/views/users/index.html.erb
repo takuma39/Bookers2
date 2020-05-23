@@ -30,7 +30,7 @@
 
 
       <tr style="user-select: auto;">
-        <td style="user-select: auto;"><img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" alt="No image icon" style="user-select: auto;"></td>
+        <td style="user-select: auto;"><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></td>
         <td style="user-select: auto;"><%= user.name %></td>
         <td style="user-select: auto;"><%= link_to " Show", user_path(user.id) %></td>
       </tr>
