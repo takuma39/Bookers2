@@ -19,7 +19,9 @@
           <td style="user-select: auto;">
             <%= link_to user_path(@books.user_id) do %>
             <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+
             <% end %> <!-- 変更 -->
+            <%= link_to @books.user.name, user_path(@books.user_id) %>
           </td>
           <td style="user-select: auto;"><%= link_to "#{@books.title}", book_path(@books.id) %></td> <!-- 変更 -->
           <td style="user-select: auto;"><%= @books.body %></td> <!-- 変更 -->
