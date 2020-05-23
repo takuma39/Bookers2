@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update]
 
   def show
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @user = current_user
     @book = Book.new
   end
 
